@@ -131,4 +131,44 @@ item의 목록(list)을 나타낼 수 있는 요소를 제공한다.
 </ul>
 ```
 
-###
+### Active items  
+클래스에 `.active`를 추가하면 현재 활성화되어있는 항목을 표시할 수 있다.  
+
+### Disabled items  
+클래스에 `.disabled`를 추가하면 해당 항목을 비활성화할 수 있다.  
+
+### Links and buttons  
+클래스에 `.list-group-item-active`를 추가하면 hover 효과를 줄 수 있다.  
+      
+<br>
+
+# 양식  
+정보를 입력 받아 제출하는 형태의 UI를 form이라고 한다.  
+
+## Form controls  
+컨트롤의 클래스에 `.form-control`을 추가하면 bootstrap에서 제공하는 스타일을 적용할 수 있다.
+
+### Sizing
+컨트롤의 클래스에 `.form-control-lg`를 추가하면 크기를 크게, `.form-control-sm`을 추가하면 작게, 아무 것도 추가하지 않으면 보통으로 크기를 적용할 수 있다.
+
+### Disabled and Readonly
+컨트롤의 클래스에 `.disabled`를 추가하면 컨트롤을 비활성화, `.readonly`를 추가하면 읽기 전용으로 적용할 수 있다.
+
+### File input
+파일을 업로드할 수 있는 UI가 제공된다.  
+```html
+<div class="mb-3">
+  <label for="formFile" class="form-label">Default file input example</label>
+  <input class="form-control" type="file" id="formFile">
+</div>
+<div class="mb-3">
+  <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+  <input class="form-control" type="file" id="formFileMultiple" multiple>
+</div>
+```
+## Input group
+여러 가지 input들을 조합하여 다양한 UI를 만들 수 있다.
+
+<br>
+
+# 모달
