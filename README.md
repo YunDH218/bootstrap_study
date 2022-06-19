@@ -172,3 +172,85 @@ item의 목록(list)을 나타낼 수 있는 요소를 제공한다.
 <br>
 
 # 모달
+포커스가 되는 창 그 밖의 영역은 어둡게 표시되는 형태의 UI를 모달이라고 한다.
+
+## modal로 sign-in form 만들기
+HTML
+```html
+<body>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Sign in
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+```
+JS
+```js
+const emailInputEl = document.querySelector('#exampleInputEmail1')
+const modalEl = document.querySelector('#exampleModal')
+
+// modal이 열리면 email input에 focus
+modalEl.addEventListener('shown.bs.modal', () => {
+  emailInputEl.focus()
+})
+```
+
+<br>
+
+# 툴팁
+툴팁은 어떤 요소에 대한 설명을 제시할 때 사용되는 요소이다. 툴팁은 성능상의 이유로 포함되어 있지 않아 직접 초기화 해야 한다.
+```js
+// 초기화 예시
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+```
+
+<br>
+
+# Bootstrap in NPM project
+cdn으로 사용할 때는 커스터마이징을 할 수 없기 때문에 필요한 경우 NPM에서 설치하여 사용해야 한다.
+아래의 문장을 통해 설치한다.
+```
+$ npm install bootstrap@next
+```
+javascript에서 아래의 경로로 bootstrap을 import해온다.
+```js
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle'
+```
+scss에서 아래의 경로로 bootstrap을 import해온다.
+```scss
+@import "../node_modules/bootstrap/scss/bootstrap";
+```
